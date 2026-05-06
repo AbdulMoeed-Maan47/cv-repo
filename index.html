@@ -16,27 +16,22 @@
   <body>
     <div class="top-bar">
       <div class="name">
-        <p class="top-bar-element">Abdul Moeed CV</p>
+        <p class="top-bar-element">Abdul Moeed Maan CV</p>
       </div>
       <div class="icons">
-        <button
-          class="top-bar-element dark-mode"
-          onclick="
-            document.documentElement.setAttribute(
-              'data-theme',
-              document.documentElement.getAttribute('data-theme') === 'dark'
-                ? 'light'
-                : 'dark',
-            )
-          "
-        >
+        <button class="top-bar-element" id="dark-mode">
           <i class="fa-regular fa-moon"></i>
         </button>
-        <button class="top-bar-element download">
-          <a href="files/Abdul Moeed CV.pdf">
+        <a href="files/Abdul Moeed CV.pdf" download
+          ><button class="top-bar-element" id="download">
             <i class="fa-solid fa-arrow-down"></i>
-          </a>
+          </button>
+        </a>
+        <a href="contact.html" target="_blank">
+        <button class="top-bar-element" id="email">
+          <i class="fa-regular fa-envelope"></i>
         </button>
+        </a>
       </div>
     </div>
     <header class="main-header">
@@ -57,8 +52,8 @@
         <li><a href="#about">About Me</a></li>
         <li><a href="#education">Education</a></li>
         <li><a href="#skills">Skills</a></li>
-        <li><a href="#Projects">Projects</a></li>
-        <li><a href="experiences">Experiences</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experiences">Experiences</a></li>
         <li><a href="#contact-info">Contact Information</a></li>
       </ul>
     </nav>
@@ -233,5 +228,13 @@
         </li>
       </ul>
     </footer>
+    <script>
+      document.getElementById("dark-mode").addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+      });
+    </script>
   </body>
 </html>
