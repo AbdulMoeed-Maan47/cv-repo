@@ -59,6 +59,10 @@ body {
   padding: 10px;
 }
 
+.download a{
+  color: black;
+}
+
 .main-header {
   width: 100%;
   height: 300px;
