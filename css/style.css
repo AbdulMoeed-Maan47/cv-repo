@@ -9,6 +9,15 @@
   --color: black;
 }
 
+@keyframes zoom-in {
+  from {
+    font-size: 100%;
+  }
+  to {
+    font-size: 125%;
+  }
+}
+
 a {
   text-decoration: none;
   color: var(--color);
@@ -16,6 +25,10 @@ a {
 
 a:visited {
   color: var(--color);
+}
+
+a:hover {
+  animation: zoom-in 2s linear 0s 1 normal;
 }
 
 ul {
@@ -38,6 +51,7 @@ body {
   justify-content: center;
   align-items: center;
   margin-left: 10vw;
+  margin-top: 40px;
 }
 
 .top-bar {
@@ -74,7 +88,6 @@ body {
   justify-content: space-around;
   align-items: center;
   border-bottom: 4px solid var(--color);
-  margin-top: 40px;
 }
 
 .border {
@@ -131,6 +144,7 @@ body {
 .section {
   line-height: 1.5rem;
   margin-bottom: 15px;
+  scroll-margin-top: 70px;
 }
 
 .section h2 {
