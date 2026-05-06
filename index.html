@@ -4,9 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdul Moeed CV</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
+    <div class="top-bar">
+      <div class="name">
+        <p class="top-bar-element">Abdul Moeed CV</p>
+      </div>
+      <div class="icons">
+        <button
+          class="top-bar-element dark-mode"
+          onclick="
+            document.documentElement.setAttribute(
+              'data-theme',
+              document.documentElement.getAttribute('data-theme') === 'dark'
+                ? 'light'
+                : 'dark',
+            )
+          "
+        >
+          <i class="fa-regular fa-moon"></i>
+        </button>
+      </div>
+    </div>
     <header class="main-header">
       <div class="title-box border">
         <h1 class="title">Abdul Moeed Maan</h1>
