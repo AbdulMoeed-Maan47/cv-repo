@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Abdul Moeed CV</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+      integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
@@ -20,7 +27,7 @@
             <i class="fa-solid fa-arrow-down"></i>
           </button>
         </a>
-        <a href="contact.html" target="_blank">
+        <a href="contact.html">
           <button class="top-bar-element" id="email">
             <i class="fa-regular fa-envelope"></i>
           </button>
@@ -30,24 +37,81 @@
     <div class="container">
       <div class="border">
         <h2>Contact Form</h2>
-        <form class="form">
+        <form
+          id="contact-form"
+          class="form"
+          action="https://forminit.com/f/fbm9kd9qko9"
+          method="post"
+        >
           <div class="form-element">
-            <p> Name:</p>
-            <input type="text" placeholder="Enter your name"/>
+            <p>Name:</p>
+            <input
+              type="text"
+              name="fi-sender-fullName"
+              placeholder="Your name"
+              required
+            />
           </div>
           <div class="form-element">
-            <p> Email:</p>
-            <input type="email" placeholder="Enter your email"/>
+            <p>Email:</p>
+            <input
+              type="email"
+              name="fi-sender-email"
+              placeholder="Your email"
+              required
+            />
           </div>
           <div class="form-element">
-            <p> Message:</p>
-            <textarea placeholder="Enter your message"></textarea>
+            <p>Message:</p>
+            <textarea
+              name="fi-text-message"
+              placeholder="Your message"
+              required
+            ></textarea>
           </div>
-          <!-- <div class="form-element"> -->
-            <button>Submit</button>
-          <!-- </div> -->
+          <button type="submit">Submit</button>
         </form>
       </div>
+      <p class="form-response border hide" id="form-result"></p>
     </div>
+    <script src="https://forminit.com/sdk/v1/forminit.js"></script>
+    <script>
+      document.getElementById("dark-mode").addEventListener("click", () => {
+        const currentTheme =
+          document.documentElement.getAttribute("data-theme");
+        const newTheme = currentTheme === "dark" ? "light" : "dark";
+        document.documentElement.setAttribute("data-theme", newTheme);
+      });
+    </script>
+    <script>
+      const forminit = new Forminit();
+
+      document
+        .getElementById("contact-form")
+        .addEventListener("submit", async (e) => {
+          e.preventDefault();
+
+          const formData = new FormData(e.target);
+          const { data, error } = await forminit.submit(
+            "fbm9kd9qko9",
+            formData,
+          );
+
+          const response = document.getElementById("form-result");
+          response.classList.remove("hide");
+
+          if (error) {
+            response.textContent = error.message;
+            return;
+          }
+          response.textContent = "Message sent! Going back to homepage!";
+
+          setTimeout(() => {
+            window.history.back();
+          }, 1000);
+
+          e.target.reset();
+        });
+    </script>
   </body>
 </html>
