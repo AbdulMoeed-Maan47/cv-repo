@@ -45,7 +45,7 @@ body {
   border-bottom: 4px solid var(--color);
 }
 
-.title-box {
+.border {
   border: 2px solid var(--color);
   border-radius: 10px;
   padding: 10px;
@@ -57,6 +57,7 @@ body {
 
 .img-box {
   border: 2px solid black;
+  border-radius: 10px;
 }
 
 .profile-picture {
@@ -64,12 +65,53 @@ body {
   width: 180px;
   background-image: url(../images/pfp.png);
   background-size: cover;
+  border-radius: 10px;
+}
+
+.main-body {
+  margin: 20px;
+}
+
+.section {
+  line-height: 1.5rem;
+  margin-bottom: 15px;
+}
+
+.section h2 {
+  text-decoration: underline;
+  margin-bottom: 3px;
+}
+
+.section li {
+  margin-bottom: 5px;
+}
+
+.education-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.skills h3,
+p {
+  display: inline;
+}
+
+ol > li::marker {
+  font-weight: bold;
+}
+
+.contact {
+  font-size: 1.5rem;
+  text-align: center;
 }
 
 .main-footer {
   width: 100%;
   height: 100px;
   border-top: 4px solid var(--color);
+  margin-bottom: 50px;
 }
 
 .contact-info {
