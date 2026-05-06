@@ -78,6 +78,14 @@ body {
   padding: 10px;
 }
 
+.top-bar .name a {
+  color: white;
+}
+
+.top-bar .icons a {
+  color: black;
+}
+
 .main-header {
   width: 100%;
   height: 300px;
